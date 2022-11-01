@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>Rumineat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3.css">
+<link rel="stylesheet" href="../css/soon_style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body class="w3-content w3-black" style="max-width:1500px;" onclick="dropdown_menu()">
+
+<!-- For Sticky Nav -->
+<div id="Top">
+
+  <div class="sticky">
+    <div class="w3-display-topright w3-padding" style="width:35%">
+      <div class="w3-dropdown-click w3-display-topright">
+        <button onclick="dropdown_menu(true)" class="w3-button fa fa-bars" style="font-size:30px;color:#673ab7"></button>
+        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border" style="right:0">
+          <a href="../index.html#Top" class="w3-bar-item w3-button">Home</a>
+          <a href="../index.html#About" class="w3-bar-item w3-button">About</a>
+          <a href="../index.html#News" class="w3-bar-item w3-button">News</a>
+          <a href="../index.html#Team" class="w3-bar-item w3-button">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Image by Masashi Wakui from Pixabay -->
+    <img class="w3-image" src="../images/LEikIOMSxfs.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
+
+    <div class="w3-display-middle w3-center w3-padding w3-hide-small">
+      <div class="transbox">
+        <h1 class="w3-padding-small w3-xlarge w3-margin-top">COMING SOON</h1>
+      </div>
+      <p id="countdown" class="w3-xlarge"></p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+
+<!-- For Sticky Nav -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-16 w3-white w3-center">
+  <div class="w3-section w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <div class="w3-section w3-small">
+    <p><small>Copyright &copy;</small>
+    <small><script>document.write(new Date().getFullYear())</script></small>
+    <small>, Rumineat. All Rights Reserved.</small></p>
+  </div>
+</footer>
+
+<script>
+
+// Drop down
+function dropdown_menu(t) {
+    var x = document.getElementById("Demo");
+    if (t && x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+    event.stopPropagation();
+}
+
+// Countdown
+// Set the date we're counting down to
+var countDownDate = new Date("Oct 1, 2019 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
